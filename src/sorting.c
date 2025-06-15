@@ -6,7 +6,7 @@
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 15:40:50 by dt                #+#    #+#             */
-/*   Updated: 2025/06/14 20:03:34 by dt               ###   ########.fr       */
+/*   Updated: 2025/06/15 17:30:37 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,7 @@ void	two_sort(t_nums **a)
 void	three_sort(t_nums **a)
 {
 	t_nums	*biggest;
-	t_nums	*tmp;
-
-	tmp = *a;
+	
 	biggest = find_biggest_number(*a);
 	set_position(*a);
 	if (biggest->position == 0)
@@ -89,7 +87,6 @@ void	three_sort(t_nums **a)
 		rra(a);
 	if ((*a)->number > ((*a)->next)->number)
 		sa(a);
-	tmp = *a;
 }
    
 // printf("\nFrom three_sort func\nSTACK A:\n"); // DEL

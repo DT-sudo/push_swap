@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rra_rrb_rr.c                                       :+:      :+:    :+:   */
+/*   rra_rrb_rrr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:04:40 by dtereshc          #+#    #+#             */
-/*   Updated: 2025/06/14 20:07:10 by dt               ###   ########.fr       */
+/*   Updated: 2025/06/15 17:29:41 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@ void rra(t_nums **a)
 {
     t_nums *last;
     t_nums *before_lust;
-    int i;
 
     if (!a || !*a || !(*a)->next)
         return;
-    i = -1;
     last = *a;
     before_lust = *a;
-        while (last->next)
+    while (last->next)
     {
         before_lust = last;
         last = last->next;
@@ -38,24 +36,22 @@ void rra(t_nums **a)
 
 void	rrb(t_nums **b)
 {
-    t_nums *lust;
+    t_nums *last;
     t_nums *before_lust;
-    int i;
 
-    i = -1;
-    lust = *b;
+    if (!b || !*b || !(*b)->next)
+        return;
+    last = *b;
     before_lust = *b;
-    while (lust->next != NULL)
+    while (last->next)
     {
-        lust = lust->next;
-        i++;
+        before_lust = last;
+        last = last->next;
     }
-    while (i--)
-        before_lust = before_lust->next;
     before_lust->next = NULL;
-    lust->next = *b;
-    *b = lust; 
-	write(1, "rra\n", 4);
+    last->next = *b;
+    *b = last; 
+	write(1, "rrb\n", 4);
     set_position(*b);
 }
 

@@ -223,83 +223,83 @@
 
 //////////////
 
-# include <limits.h>
-# include <stdbool.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
+// # include <limits.h>
+// # include <stdbool.h>
+// # include <stdio.h>
+// # include <stdlib.h>
+// # include <unistd.h>
 
-typedef struct s_nums
-{
-	int				number;
-	struct s_nums	*next;
-}					t_nums;
+// typedef struct s_nums
+// {
+// 	int				number;
+// 	struct s_nums	*next;
+// }					t_nums;
 
-t_nums	*do_node(int number)
-{
-	t_nums	*node;
+// t_nums	*do_node(int number)
+// {
+// 	t_nums	*node;
 
-	node = malloc(sizeof(t_nums));
-	if (!node)
-		exit(0);
-	node->number = number;
-	node->next = NULL;
-	return (node);
-}
+// 	node = malloc(sizeof(t_nums));
+// 	if (!node)
+// 		exit(0);
+// 	node->number = number;
+// 	node->next = NULL;
+// 	return (node);
+// }
 
-void rra(t_nums **a)
-{
-    t_nums *lust;
-    t_nums *before_lust;
-    int i;
+// void rra(t_nums **a)
+// {
+//     t_nums *lust;
+//     t_nums *before_lust;
+//     int i;
 
-    i = -1;
-    lust = *a;
-    before_lust = *a;
-    while (lust->next != NULL)
-    {
-        lust = lust->next;
-        i++;
-    }
-    while (i--)
-        before_lust = before_lust->next;
-    before_lust->next = NULL;
-    lust->next = *a;
-    *a = lust; 
-	// write(1, "rra\n", 4);
-    // set_position(*a);
-}
+//     i = -1;
+//     lust = *a;
+//     before_lust = *a;
+//     while (lust->next != NULL)
+//     {
+//         lust = lust->next;
+//         i++;
+//     }
+//     while (i--)
+//         before_lust = before_lust->next;
+//     before_lust->next = NULL;
+//     lust->next = *a;
+//     *a = lust; 
+// 	// write(1, "rra\n", 4);
+//     // set_position(*a);
+// }
 
-int main(void)
-{
-    t_nums *h;
-    t_nums *a, *b,*c;
-    int z, x, y;
+// int main(void)
+// {
+//     t_nums *h;
+//     t_nums *a, *b,*c;
+//     int z, x, y;
 
-    z = 10;
-    x = 20;
-    y = 30;
-    a = do_node(z);
-    b = do_node(x);
-    c = do_node(y);
-    a->next = b;
-    b->next = c;
-    h = a;
-    while(h != NULL)
-    {
-        printf("%d -> ", (h)->number);
-        h = (h)->next;
-    }
-    printf("\n");
-    h = a;
-    rra(&h);
-    while(h != NULL)
-    {
-        printf("%d -> ", (h)->number);
-        h = (h)->next;
-    }    
-    return 0;
-}
+//     z = 10;
+//     x = 20;
+//     y = 30;
+//     a = do_node(z);
+//     b = do_node(x);
+//     c = do_node(y);
+//     a->next = b;
+//     b->next = c;
+//     h = a;
+//     while(h != NULL)
+//     {
+//         printf("%d -> ", (h)->number);
+//         h = (h)->next;
+//     }
+//     printf("\n");
+//     h = a;
+//     rra(&h);
+//     while(h != NULL)
+//     {
+//         printf("%d -> ", (h)->number);
+//         h = (h)->next;
+//     }    
+//     return 0;
+// }
 
 // / /////
 
@@ -398,4 +398,64 @@ int main(void)
 //         h = (h)->next;
 //     }    
 //     return 0;
+// }
+
+
+
+
+
+
+
+// void	push_swap(t_nums **a, t_nums **b)
+// {
+// 	t_nums	*a_tmp;
+// 	t_nums	*b_tmp;
+
+// 	//////////////
+// 	a_tmp = *a;
+// 	printf("\n\nFrom push_swap func\nFINAL A :\n");
+// 	while (a_tmp)
+// 	{
+// 		printf("%d -> ", a_tmp->number);
+// 		a_tmp = a_tmp->next;
+// 	}
+// 	b_tmp = *b;
+// 	printf("\nFrom push_swap func\nFINAL B:\n");
+// 	while (b_tmp)
+// 	{
+// 		printf("%d -> ", b_tmp->number);
+// 		b_tmp = b_tmp->next;
+// 	}
+// 	//////////////
+// 	if (stack_len(*a) == 4)
+// 		pb(a, b);
+// 	else
+// 	{
+// 		pb(a, b);
+// 		pb(a, b);
+// 	}
+// 	while (stack_len(*a) != 3)
+// 		push_swap_logic_a(a, b, a_tmp);
+// 	a_tmp = *a;
+// 	three_sort(a);
+// 	while (*b)
+// 		push_swap_logic_b(a, b, b_tmp);
+// 	while (!stack_is_sorted(*a))
+// 		rra(a);
+// 	//////////////
+// 	a_tmp = *a;
+// 	printf("\n\nFrom push_swap func\nFINAL A :\n");
+// 	while (a_tmp)
+// 	{
+// 		printf("%d -> ", a_tmp->number);
+// 		a_tmp = a_tmp->next;
+// 	}
+// 	b_tmp = *b;
+// 	printf("\nFrom push_swap func\nFINAL B:\n");
+// 	while (b_tmp)
+// 	{
+// 		printf("%d -> ", b_tmp->number);
+// 		b_tmp = b_tmp->next;
+// 	}
+// 	//////////////
 // }
