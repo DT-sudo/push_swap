@@ -6,7 +6,7 @@
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 17:10:47 by dtereshc          #+#    #+#             */
-/*   Updated: 2025/06/14 20:10:13 by dt               ###   ########.fr       */
+/*   Updated: 2025/06/15 21:16:46 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	str_to_num_cleaner(char **argv, t_nums **a, bool argv_is_string)
 	if (argv_is_string)
 		free_malloced_input(argv);
 	clear_stack(a, del);
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(ERR_INPUT_FAIL);
 }
 

@@ -6,7 +6,7 @@
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 17:12:44 by dtereshc          #+#    #+#             */
-/*   Updated: 2025/06/14 20:11:08 by dt               ###   ########.fr       */
+/*   Updated: 2025/06/15 21:16:38 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ t_nums	*do_node(int number)
 
 	node = malloc(sizeof(t_nums));
 	if (!node)
+	{
+		write(2, "Error\n", 6);
 		exit(ERR_MEMORY_FAIL);
+	}
 	node->number = number;
 	node->position = 0;
 	node->top_price = 0;

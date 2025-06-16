@@ -2,12 +2,16 @@
 
 bool	check_validity(char *c)
 {
+	int i;
+
+	i = 0;
 	if (*c == '-' || *c == '+' || (*c >= '0' && *c <= '9'))
 		c++;
 	else
 		return (false);
 	while (*c)
 	{
+		i++;
 		if (*c >= '0' && *c <= '9')
 		{
 			c++;
@@ -17,9 +21,11 @@ bool	check_validity(char *c)
 			return (false);
 		c++;
 	}
+	if (i >= 11 || (i == 0 && (*(c-1) == '-' || *(c-1) == '+')))
+		return(false);
 	return (true);
 }
-
+//43 45
 long	str_to_num_logic(char *num, long res)
 {
 	int	sign;
@@ -44,6 +50,24 @@ long	str_to_num_logic(char *num, long res)
 	}
 	res *= sign;
 	return (res);
+}
+
+void validate_second_argc(char *arg)
+{
+	long r;
+
+	r = 0;
+	if(!(check_validity(arg)))
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
+	r = str_to_num_logic(arg, r);
+	if (r < INT_MIN || r > INT_MAX)
+	{
+		write(2, "Error\n", 6);
+		exit(2);
+	}
 }
 
 long	str_to_num(char *num, char **argv, t_nums **a, bool argv_is_string)

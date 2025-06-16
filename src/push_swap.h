@@ -35,6 +35,7 @@ long				str_to_num(char *num, char **argv, t_nums **a,
 						bool argv_is_string);
 void				str_to_num_cleaner(char **argv, t_nums **a,
 						bool argv_is_string);
+void				validate_second_argc(char *arg);
 
 // stack funcs
 t_nums				**do_stack(t_nums **a, char **argv, bool argv_is_string);
