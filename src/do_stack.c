@@ -25,7 +25,7 @@ bool	check_validity(char *c)
 		return(false);
 	return (true);
 }
-//43 45
+
 long	str_to_num_logic(char *num, long res)
 {
 	int	sign;
@@ -50,24 +50,6 @@ long	str_to_num_logic(char *num, long res)
 	}
 	res *= sign;
 	return (res);
-}
-
-void validate_second_argc(char *arg)
-{
-	long r;
-
-	r = 0;
-	if(!(check_validity(arg)))
-	{
-		write(2, "Error\n", 6);
-		exit(1);
-	}
-	r = str_to_num_logic(arg, r);
-	if (r < INT_MIN || r > INT_MAX)
-	{
-		write(2, "Error\n", 6);
-		exit(2);
-	}
 }
 
 long	str_to_num(char *num, char **argv, t_nums **a, bool argv_is_string)
@@ -106,7 +88,6 @@ t_nums	**do_stack(t_nums **a, char **argv, bool argv_is_string)
 // int main(int argc, char *argv[])
 // {
 //     t_nums *a;
-
 //     a = NULL;
 //     if (argc == 1 || (argc == 2 && !argv[1][0]))
 //         return (1);

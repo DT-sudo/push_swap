@@ -22,6 +22,10 @@ typedef struct s_nums
 	struct s_nums	*next;
 }					t_nums;
 
+// del
+void				print_stack(const char *name, t_nums *stack);
+void				print_stacks_summary(t_nums *stack_a, t_nums *stack_b);
+
 // parse input
 int					dublicate_check(t_nums *node, char **argv,
 						bool argv_is_string);
@@ -67,10 +71,15 @@ void				push_swap_logic_a(t_nums **stack1, t_nums **stack2,
 						t_nums *num);
 void				push_swap_logic_b(t_nums **stack1, t_nums **stack2,
 						t_nums *num);
-void				get_top_dif_half(t_nums **stack1, t_nums **stack2,
+void				get_top_dif_half_a(t_nums **stack1, t_nums **stack2,
 						t_nums *num, t_nums *trgt);
-void				get_top_same_half(t_nums **stack1, t_nums **stack2,
+void				get_top_same_half_a(t_nums **stack1, t_nums **stack2,
 						t_nums *num, t_nums *trgt);
+void				get_top_dif_half_b(t_nums **stack1, t_nums **stack2,
+						t_nums *num, t_nums *trgt);
+void				get_top_same_half_b(t_nums **stack1, t_nums **stack2,
+						t_nums *num, t_nums *trgt);
+void				last_sort(t_nums **stack_1);
 
 // rules
 void				sa(t_nums **a);

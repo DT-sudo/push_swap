@@ -6,7 +6,7 @@
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 15:31:16 by dtereshc          #+#    #+#             */
-/*   Updated: 2025/06/14 20:08:04 by dt               ###   ########.fr       */
+/*   Updated: 2025/07/01 17:59:24 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	set_odd_position(t_nums *stack, int median, int len, int i)
 {
-	if (i < median)
+	if (i <= median)
 	{
 		stack->top_price = i;
 		stack->first_half = true;
@@ -40,6 +40,7 @@ void	set_even_position(t_nums *stack, int median, int len, int i)
 	}
 }
 
+//setting 1hlf, top, pos
 void	set_position(t_nums *stack)
 {
 	int	median;
@@ -62,6 +63,7 @@ void	set_position(t_nums *stack)
 	}
 }
 
+// setting the cheapest
 void	set_cheapest(t_nums *stack)
 {
 	t_nums	*cheapest_node;

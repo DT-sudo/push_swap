@@ -6,13 +6,13 @@
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 15:40:50 by dt                #+#    #+#             */
-/*   Updated: 2025/06/15 17:30:37 by dt               ###   ########.fr       */
+/*   Updated: 2025/07/01 19:47:00 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	get_top_dif_half(t_nums **stack1, t_nums **stack2, t_nums *num,
+void	get_top_dif_half_a(t_nums **stack1, t_nums **stack2, t_nums *num,
 		t_nums *trgt)
 {
 	if (!stack1 || !stack2)
@@ -22,12 +22,12 @@ void	get_top_dif_half(t_nums **stack1, t_nums **stack2, t_nums *num,
 		while (num->position != 0)
 			ra(stack1);
 	}
-	else if (num->first_half == 0 && num->position != 0)
+	else if (num->first_half == 0 && num->position != 0) //del && num->position != 0
 	{
 		while (num->position != 0)
 			rra(stack1);
 	}
-	if (trgt->first_half == 0 && trgt->position != 0)
+	if (trgt->first_half == 0 && trgt->position != 0) //del && num->position != 0
 	{
 		while (trgt->position != 0)
 			rrb(stack2);
@@ -39,7 +39,7 @@ void	get_top_dif_half(t_nums **stack1, t_nums **stack2, t_nums *num,
 	}
 }
 
-void	get_top_same_half(t_nums **stack1, t_nums **stack2, t_nums *num,
+void	get_top_same_half_a(t_nums **stack1, t_nums **stack2, t_nums *num,
 		t_nums *trgt)
 {
 	if (!stack1 || !stack2)
@@ -61,6 +61,58 @@ void	get_top_same_half(t_nums **stack1, t_nums **stack2, t_nums *num,
 			rra(stack1);
 		while (trgt->position != 0)
 			rrb(stack2);
+	}
+}
+
+void	get_top_dif_half_b(t_nums **stack1, t_nums **stack2, t_nums *num,
+		t_nums *trgt)
+{
+	if (!stack1 || !stack2)
+		return ;
+	if (num->first_half == 1 && num->position != 0)
+	{
+		while (num->position != 0)
+			rb(stack2);
+	}
+	else if (num->first_half == 0 && num->position != 0) //del && num->position != 0
+	{
+		while (num->position != 0)
+			rrb(stack2);
+	}
+	if (trgt->first_half == 0 && trgt->position != 0) //del && trgt->position != 0
+	{
+		while (trgt->position != 0)
+			rra(stack1);
+	}
+	else if (trgt->first_half == 1 && trgt->position != 0)
+	{
+		while (trgt->position != 0)
+			ra(stack1);
+	}
+}
+
+void	get_top_same_half_b(t_nums **stack1, t_nums **stack2, t_nums *num,
+		t_nums *trgt)
+{
+	if (!stack1 || !stack2)
+		return ;
+	if (num->first_half == 1 && trgt->first_half == 1)
+	{
+		while (num->position != 0 && trgt->position != 0)
+			rr(stack1, stack2);
+		while (num->position != 0)
+			rb(stack2);
+		while (trgt->position != 0)
+			ra(stack1);
+	}
+	else if (num->first_half == 0 && trgt->first_half == 0)
+	{
+		while (num->position != 0 && trgt->position != 0)
+			rrr(stack1, stack2);
+		while (num->position != 0)
+			rrb(stack2);
+		while (trgt->position != 0)
+			rra(stack1);
 	}
 }
 
@@ -88,11 +140,3 @@ void	three_sort(t_nums **a)
 	if ((*a)->number > ((*a)->next)->number)
 		sa(a);
 }
-   
-// printf("\nFrom three_sort func\nSTACK A:\n"); // DEL
-// while (tmp != NULL)
-// {
-// 	printf("%d -> ", (tmp)->number);
-// 	tmp = (tmp)->next;
-// }
-// printf("\n");
