@@ -6,7 +6,7 @@
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 17:12:44 by dtereshc          #+#    #+#             */
-/*   Updated: 2025/07/01 21:09:58 by dt               ###   ########.fr       */
+/*   Updated: 2025/07/02 21:45:48 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,6 @@ typedef struct s_nums
 	struct s_nums	*target;
 	struct s_nums	*next;
 }					t_nums;
-
-// del
-void				print_stack(const char *name, t_nums *stack);
-void				print_stacks_summary(t_nums *stack_a, t_nums *stack_b);
 
 // parse input
 int					dublicate_check(t_nums *node, char **argv,
@@ -98,12 +94,10 @@ void				sb(t_nums **b);
 void				ss(t_nums **a, t_nums **b);
 void				pa(t_nums **a, t_nums **b);
 void				pb(t_nums **a, t_nums **b);
-void				ra(t_nums **a);
-void				rb(t_nums **b);
+void				ra_b(t_nums **a, int i);
 void				rr(t_nums **a, t_nums **b);
 void				rrr(t_nums **a, t_nums **b);
-void				rra(t_nums **a);
-void				rrb(t_nums **b);
+void				rra_b(t_nums **a, int i);
 
 // free funcs
 void				free_malloced_input(char **malloced_argv);

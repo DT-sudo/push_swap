@@ -6,7 +6,7 @@
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 15:40:50 by dt                #+#    #+#             */
-/*   Updated: 2025/07/01 22:04:49 by dt               ###   ########.fr       */
+/*   Updated: 2025/07/02 21:20:45 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	three_sort(t_nums **a)
 	biggest = find_biggest_number(*a);
 	set_position(*a);
 	if (biggest->position == 0)
-		ra(a);
+		ra_b(a, 0);
 	else if (biggest->position == 1)
-		rra(a);
+		rra_b(a, 0);
 	if ((*a)->number > ((*a)->next)->number)
 		sa(a);
 }
@@ -45,11 +45,11 @@ void	last_sort(t_nums **stack_a)
 	if (smlst->first_half == 1)
 	{
 		while (smlst->position != 0)
-			ra(stack_a);
+			ra_b(stack_a, 0);
 	}
 	else
 	{
 		while (smlst->position != 0)
-			rra(stack_a);
+			rra_b(stack_a, 0);
 	}
 }

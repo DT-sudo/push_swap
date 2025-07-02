@@ -6,52 +6,36 @@
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 14:46:16 by dtereshc          #+#    #+#             */
-/*   Updated: 2025/07/01 20:59:46 by dt               ###   ########.fr       */
+/*   Updated: 2025/07/02 21:44:59 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Shift up all elements of stack a by 1.
-void	ra(t_nums **a)
+void	ra_b(t_nums **stack, int i)
 {
-	t_nums	*p_a;
+	t_nums	*p;
 	t_nums	*p_sec;
 
-	p_a = *a;
-	p_sec = (*a)->next;
-	while (p_a->next != NULL)
-		p_a = p_a->next;
-	p_a->next = *a;
-	(*a)->next = NULL;
-	*a = p_sec;
-	write(1, "ra\n", 3);
-	set_position(*a);
+	if (!stack || !*stack)
+		return ;
+	p = *stack;
+	p_sec = (*stack)->next;
+	while (p->next != NULL)
+		p = p->next;
+	p->next = *stack;
+	(*stack)->next = NULL;
+	*stack = p_sec;
+	if(i == 0)
+		write(1, "ra\n", 3);
+	else if (i == 1)
+		write(1, "rb\n", 3);
+	set_position(*stack);
 }
 
-// Shift up all elements of stack b by 1
-void	rb(t_nums **b)
-{
-	t_nums	*p_b;
-	t_nums	*p_sec;
-
-	p_b = *b;
-	p_sec = (*b)->next;
-	while (p_b->next != NULL)
-		p_b = p_b->next;
-	p_b->next = *b;
-	(*b)->next = NULL;
-	*b = p_sec;
-	write(1, "rb\n", 3);
-	set_position(*b);
-}
-
-// ra and rb at the same time.
 void	rr(t_nums **a, t_nums **b)
 {
-	ra(a);
-	rb(b);
+	ra_b(a, 3);
+	ra_b(b, 3);
 	write(1, "rr\n", 3);
-	set_position(*a);
-	set_position(*b);
 }

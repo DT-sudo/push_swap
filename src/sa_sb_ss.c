@@ -6,13 +6,12 @@
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 14:46:27 by dtereshc          #+#    #+#             */
-/*   Updated: 2025/06/14 20:07:25 by dt               ###   ########.fr       */
+/*   Updated: 2025/07/02 21:46:17 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Swap the first 2 elements at the top of stack a.
 void	sa(t_nums **a)
 {
 	t_nums	*tmp;
@@ -27,7 +26,6 @@ void	sa(t_nums **a)
 	set_position(*a);
 }
 
-// Swap the first 2 elements at the top of stack b.
 void	sb(t_nums **b)
 {
 	t_nums	*tmp;
@@ -47,6 +45,4 @@ void	ss(t_nums **a, t_nums **b)
 	sa(a);
 	sb(b);
 	write(1, "ss\n", 3);
-	set_position(*a);
-	set_position(*b);
 }
