@@ -9,7 +9,7 @@ PS = push_swap
 SRCDIR = src
 OBJDIR = obj
 
-SRC = do_stack.c free_funcs.c ft_split.c lst_funcs.c main.c pa_pb.c push_swap_funcs.c push_swap.c ra_rb_rr.c rra_rrb_rrr.c sa_sb_ss.c set_stack.c sorting.c utils.c
+SRC = do_stack.c free_funcs.c ft_split.c lst_funcs.c main.c pa_pb.c push_swap_funcs.c push_swap.c ra_rb_rr.c rra_rrb_rrr.c sa_sb_ss.c set_stack.c sorting.c utils.c get_top_funcs.c
 OBJS = $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
 SRCS = $(addprefix $(SRCDIR)/,$(SRC))
 

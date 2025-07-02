@@ -6,7 +6,7 @@
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 17:12:44 by dtereshc          #+#    #+#             */
-/*   Updated: 2025/06/15 21:16:38 by dt               ###   ########.fr       */
+/*   Updated: 2025/07/01 20:57:40 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,15 @@ t_nums	*find_last_num(t_nums *lst)
 
 size_t	stack_len(t_nums *node)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while(node != NULL)
+	while (node != NULL)
 	{
-		i++;	
+		i++;
 		node = node->next;
 	}
-	return i;
+	return (i);
 }
 
 void	append_num(t_nums **head, t_nums *num_to_add)
@@ -65,9 +65,9 @@ void	append_num(t_nums **head, t_nums *num_to_add)
 	find_last_num(*head)->next = num_to_add;
 }
 
-int		dublicate_check(t_nums *node, char **argv, bool argv_is_string)
+int	dublicate_check(t_nums *node, char **argv, bool argv_is_string)
 {
-	t_nums *tmp;
+	t_nums	*tmp;
 	t_nums	*compare;
 	size_t	len;
 

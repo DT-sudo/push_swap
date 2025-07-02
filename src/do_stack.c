@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   do_stack.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/02 17:04:40 by dtereshc          #+#    #+#             */
+/*   Updated: 2025/07/01 21:17:12 by dt               ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 bool	check_validity(char *c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (*c == '-' || *c == '+' || (*c >= '0' && *c <= '9'))
@@ -21,8 +33,8 @@ bool	check_validity(char *c)
 			return (false);
 		c++;
 	}
-	if (i >= 11 || (i == 0 && (*(c-1) == '-' || *(c-1) == '+')))
-		return(false);
+	if (i >= 11 || (i == 0 && (*(c - 1) == '-' || *(c - 1) == '+')))
+		return (false);
 	return (true);
 }
 
@@ -79,26 +91,6 @@ t_nums	**do_stack(t_nums **a, char **argv, bool argv_is_string)
 	}
 	dublicate_check(*a, argv, argv_is_string);
 	if (argv_is_string)
-	{
 		free_malloced_input(argv);
-	}
 	return (a);
 }
-
-// int main(int argc, char *argv[])
-// {
-//     t_nums *a;
-//     a = NULL;
-//     if (argc == 1 || (argc == 2 && !argv[1][0]))
-//         return (1);
-//     if (argc == 2)
-//         argv = ft_split(argv[1]);
-//     do_stack(&a, argv, 2 == argc);
-// 	if (!stack_is_sorted(a))
-// 	{
-// 		prft_n(a, f);
-// 		printf("%d", stack_is_sorted(a));
-// 	}
-// 	clear_stack(&a, del);
-// 	return (0);
-// }

@@ -6,7 +6,7 @@
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:55:07 by dt                #+#    #+#             */
-/*   Updated: 2025/07/01 17:47:49 by dt               ###   ########.fr       */
+/*   Updated: 2025/07/01 21:33:57 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	calc_push_price(t_nums *stack)
 	}
 }
 
-// find closets smaller target for every a from b find_target_a
 void	find_target_a(t_nums *a, t_nums *b)
 {
 	t_nums	*cur_a;
@@ -42,7 +41,6 @@ void	find_target_a(t_nums *a, t_nums *b)
 	t_nums	*target;
 
 	cur_a = a;
-	// printf("\nFrom find_target_func:");
 	while (cur_a)
 	{
 		cur_b = b;
@@ -59,13 +57,10 @@ void	find_target_a(t_nums *a, t_nums *b)
 		if (!target)
 			target = find_biggest_number(b);
 		cur_a->target = target;
-		// printf("\ntarget of %d: %d", cur_a->number, cur_a->target->number);
-		// 	// del
 		cur_a = cur_a->next;
 	}
 }
 
-// find closest bigger target for every b from a find_target_b
 void	find_target_b(t_nums *a, t_nums *b)
 {
 	t_nums	*cur_a;
@@ -73,7 +68,6 @@ void	find_target_b(t_nums *a, t_nums *b)
 	t_nums	*target;
 
 	cur_b = b;
-	// printf("\nFrom find_target_func:");
 	while (cur_b)
 	{
 		cur_a = a;
@@ -90,8 +84,6 @@ void	find_target_b(t_nums *a, t_nums *b)
 		if (!target)
 			target = find_lowest_number(a);
 		cur_b->target = target;
-		// printf("\ntarget of %d: %d", cur_b->number, cur_b->target->number);
-		// 	// del
 		cur_b = cur_b->next;
 	}
 }

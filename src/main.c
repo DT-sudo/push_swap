@@ -6,19 +6,16 @@
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 17:11:30 by dtereshc          #+#    #+#             */
-/*   Updated: 2025/07/01 15:35:10 by dt               ###   ########.fr       */
+/*   Updated: 2025/07/01 20:58:03 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// (argc == 2 && (*argv[1] is not valid num))
-//check_validity(argv[1])
-
 int	main(int argc, char *argv[])
 {
-	t_nums *a;
-	t_nums *b;
+	t_nums	*a;
+	t_nums	*b;
 
 	a = NULL;
 	b = NULL;

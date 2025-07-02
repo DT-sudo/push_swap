@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 17:12:44 by dtereshc          #+#    #+#             */
+/*   Updated: 2025/07/01 21:09:58 by dt               ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -39,7 +51,6 @@ long				str_to_num(char *num, char **argv, t_nums **a,
 						bool argv_is_string);
 void				str_to_num_cleaner(char **argv, t_nums **a,
 						bool argv_is_string);
-void				validate_second_argc(char *arg);
 
 // stack funcs
 t_nums				**do_stack(t_nums **a, char **argv, bool argv_is_string);
@@ -95,12 +106,8 @@ void				rra(t_nums **a);
 void				rrb(t_nums **b);
 
 // free funcs
+void				free_malloced_input(char **malloced_argv);
 void				clear_stack(t_nums **head, void (*f)(t_nums **));
 void				del(t_nums **node);
-
-// testing funcs
-void				free_malloced_input(char **malloced_argv);
-void				f(t_nums *s);
-void				prft_n(t_nums *lst, void (*f)(t_nums *));
 
 #endif

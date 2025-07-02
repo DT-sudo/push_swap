@@ -6,7 +6,7 @@
 /*   By: dt <dt@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 17:12:32 by dtereshc          #+#    #+#             */
-/*   Updated: 2025/06/15 14:44:14 by dt               ###   ########.fr       */
+/*   Updated: 2025/07/01 21:11:26 by dt               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	pawr(int len)
 
 int	stack_is_sorted(t_nums *node)
 {
-	t_nums *next_node;
+	t_nums	*next_node;
 
 	if (!node)
 		return (0);
